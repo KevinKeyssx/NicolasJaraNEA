@@ -2250,6 +2250,7 @@ select[multiple].navbar-form .btn {
 }
 .navbar-default {
   background-color: #ecf0f1;
+  display: block
 }
 .navbar-default .navbar-brand {
   color: #34495e;
@@ -4734,8 +4735,12 @@ footer p {
 		.section-heading{text-align:center}
 		.lead{text-align:center}
 		.box-icon{margin: 0 auto;}
-		.social{text-align:center}
-		.footer-banner{display:none}
+		
+    .social{
+      text-align:center
+
+    }
+    .footer-banner{display:none}
 		.navbar-nav > li > a {
 			font-size: 22px;
 			line-height: 42px;
