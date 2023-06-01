@@ -68,10 +68,16 @@
 		gtag('js', new Date());
 		gtag('config', 'G-M7CT7YN7F9');
 
+		function automaticRedirection() {
+			const { protocol } = window.location;
+			if ( protocol === 'http:' ) {
+				window.location.href = 'https://www.soportenicolasjara.cl';
+			}
+		}
 	</script>
 </head>
 
-<body id="home">
+<body id="home" onload="automaticRedirection()">
 
 	<!-- Preloader -->
 	<div id="preloader">
