@@ -57,28 +57,135 @@
 			height			: 100px;
 			border-radius	: 100px;
 		}
+
+		.social_link {
+			display			: flex;
+			align-items		: center;
+			justify-content	: left;
+			gap: 8px;
+		}
+
+		@media screen and (max-width: 959px) {
+			.social_link {
+				justify-content: center;
+			}
+		}
+
+		.social_hover:hover {
+			transform: scale(1.1);
+		}
+
+		button {
+			position: relative;
+			width: 150px;
+			height: 40px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			border: 1px solid #3da792;
+			background-color: #48c9b0;
+			overflow: hidden;
+			border-radius: 5px;
+		}
+
+		.button, .button__icon, .button__text {
+			transition: all 0.3s;
+		}
+
+		.button .button__text {
+			transform: translateX(22px);
+			color: #fff;
+			font-weight: 600;
+			margin-left: -16px;
+		}
+
+		.button .button__icon {
+			position: absolute;
+			transform: translateX(109px);
+			height: 100%;
+			width: 39px;
+			background-color: #41b49d;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: -5px;
+		}
+
+		.button .svg {
+			width: 20px;
+			fill: #fff;
+		}
+
+		.button:hover {
+			background: #328d7b;
+		}
+
+		.button:hover .button__text {
+			color: transparent;
+		}
+
+		.button:hover .button__icon {
+			width: 160px;
+			transform: translateX(0);
+		}
+
+		.button:active .button__icon {
+			background-color: #41b49d;
+		}
+
+		.button:active {
+			border: 1px solid #2d9f81;
+		}
+
+		.support_link {
+			display			: flex;
+			align-items		: center;
+			justify-content	: space-around;
+			width			: 100%;
+		}
+
+		.download_teamviewer {
+			display			: flex;
+			justify-content	: left;
+		}
+
+		@media screen and (max-width: 959px) {
+			.download_teamviewer {
+				justify-content: center;
+			}
+		}
 	</style>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-M7CT7YN7F9"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
+
+
 		function gtag(){
 			dataLayer.push(arguments);
 		}
-		gtag('js', new Date());
-		gtag('config', 'G-M7CT7YN7F9');
+
+
+		gtag( 'js', new Date() );
+		gtag( 'config', 'G-M7CT7YN7F9' );
+
 
 		function automaticRedirection() {
 			const { protocol } = window.location;
+
 			if ( protocol === 'http:' ) {
 				window.location.href = 'https://www.soportenicolasjara.cl';
 			}
+		}
+
+
+		function downloadTeamViewer() {
+			window.open('https://get.teamviewer.com/63qfceg');
 		}
 	</script>
 </head>
 
 <body id="home" onload="automaticRedirection()">
-
 	<!-- Preloader -->
 	<div id="preloader">
 		<div id="status"></div>
@@ -133,16 +240,6 @@
 		</div>
 	</nav> 
 
-	<!-- 
-		Asesoría, 
-		recomendaciones, 
-		soporte remoto, 
-		configuraciones de red, 
-		configuraciones de camaras de vigilancia, 
-		mejoras de rendimiento 
-		y armado de PC 
-	-->
-
 	<!-- Services -->
 	<div id="whatis" class="content-section-b" style="border-top: 0">
 		<div class="container">
@@ -153,7 +250,6 @@
 			</div>
 
 			<div class="row">
-
 				<div class="col-sm-4 wow fadeInDown text-center">
 					<img class="rotate services" src="img/services/rep.webp" alt="Generic placeholder image">
 					<h3>Reparaciones</h3>
@@ -254,9 +350,22 @@
                     <img class="img-responsive " src="img/soporte.webp" alt="Soporte">
                 </div>
 
-                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
-                    <h3 class="section-heading">Soporte</h3>
-                    <p class="sub-title lead2">Servicio de soporte remoto está diseñado para brindarte una solución rápida y 
+                <div class="col-sm-6 wow fadeInLeftBig" data-animation-delay="200">
+					<div class="support_link">
+						<h3 class="section-heading">
+							Soporte
+						</h3>
+
+						<button class="button" type="button" onclick="downloadTeamViewer()">
+							<span class="button__text">TeamViewer</span>
+
+							<span class="button__icon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="bdd05811-e15d-428c-bb53-8661459f9307" data-name="Layer 2" class="svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg>
+							</span>
+						</button>
+					</div>
+
+					<p class="sub-title lead2">Servicio de soporte remoto está diseñado para brindarte una solución rápida y 
 						efectiva a cualquier problema que puedas tener con tus dispositivos.
 					</p>
 
@@ -343,18 +452,18 @@
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center wrap_title">
 					<h2>Dirección</h2>
-					<p class="lead" style="margin-top:0">Treame tu equipo aquí.</p>
+					<p class="lead" style="margin-top:0">Tráeme tu equipo aquí.</p>
 				</div>
 
 				<div class="col-md-6">
 					<iframe 
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.9413731590034!2d-70.65448948788799!3d-33.52890987324747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662daf69b3dd50b%3A0x82034175f93b2d80!2sIgnacio%20Echeverr%C3%ADa%207999%2C%207980349%20La%20Cisterna%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1681448680108!5m2!1ses-419!2scl"
-						width="600" 
-						height="450" 
-						style="border:0;" 
-						allowfullscreen="" 
-						loading="lazy" 
-						referrerpolicy="no-referrer-when-downgrade"
+						src				= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.9413731590034!2d-70.65448948788799!3d-33.52890987324747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662daf69b3dd50b%3A0x82034175f93b2d80!2sIgnacio%20Echeverr%C3%ADa%207999%2C%207980349%20La%20Cisterna%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1681448680108!5m2!1ses-419!2scl"
+						height			= "450" 
+						width			= "100%" 
+						style			= "border:0;" 
+						allowfullscreen	= "" 
+						loading			= "lazy" 
+						referrerpolicy	= "no-referrer-when-downgrade"
 					></iframe>
 				</div>
 
@@ -368,19 +477,34 @@
 							<br>
 							Ignacio Echeverría 7999
 							<br>
-							Contáctame por whatsapp y te agendo una cita.
+							Contáctame por whatsapp y agendamos una cita.
 						</p>
 					</address>
 
 					<h3>Social</h3>
 
-					<li class="social">
-						<a href="https://web.facebook.com/NEAniko" target="_blank"><i class="fa fa-facebook-square fa-size"> </i></a>
-						<a href="https://www.instagram.com/neaniko/" target="_blank"><i class="fa fa-instagram"></i> </a>
-						<a href="https://api.whatsapp.com/send?phone=+56984458359&text=Hola! Necesito ayuda con mi PC 💻" target="_blank">
-							<i class="fa fa-phone"></i>
+					<li class="social social_link">
+						<a href="https://web.facebook.com/NEAniko" target="_blank" class="social_hover">
+							<svg width="35px" height="35px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #000000;"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Facebook-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: none;"> <g id="Color-" transform="translate(-200.000000, -160.000000)" fill="#4460A0" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #364d80;"> <path d="M225.638355,208 L202.649232,208 C201.185673,208 200,206.813592 200,205.350603 L200,162.649211 C200,161.18585 201.185859,160 202.649232,160 L245.350955,160 C246.813955,160 248,161.18585 248,162.649211 L248,205.350603 C248,206.813778 246.813769,208 245.350955,208 L233.119305,208 L233.119305,189.411755 L239.358521,189.411755 L240.292755,182.167586 L233.119305,182.167586 L233.119305,177.542641 C233.119305,175.445287 233.701712,174.01601 236.70929,174.01601 L240.545311,174.014333 L240.545311,167.535091 C239.881886,167.446808 237.604784,167.24957 234.955552,167.24957 C229.424834,167.24957 225.638355,170.625526 225.638355,176.825209 L225.638355,182.167586 L219.383122,182.167586 L219.383122,189.411755 L225.638355,189.411755 L225.638355,208 L225.638355,208 Z" id="Facebook"> </path> </g> </g> </g></svg>
+						</a>
+
+						<a href="https://www.instagram.com/neaniko/" target="_blank" class="social_hover">
+							<svg width="40px" height="40px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #e8e6e3;"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #181a1b;"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #181a1b;"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #8e2a6e;"></stop> <stop offset="0.79309" stop-color="#C62F94" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #9e2676;"></stop> <stop offset="1" stop-color="#8A3AC8" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #6c2c9e;"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #383d14;"></stop> <stop offset="0.444662" stop-color="#FB8A2E" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #af5103;"></stop> <stop offset="0.71474" stop-color="#E2425C" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #9e182e;"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #9e182e;"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #1d409e;"></stop> <stop offset="0.467799" stop-color="#6A45BE" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #523495;"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0" data-darkreader-inline-stopcolor="" style="--darkreader-inline-stopcolor: #523495;"></stop> </radialGradient> </defs> </g></svg>
+						</a>
+
+						<a href="https://api.whatsapp.com/send?phone=+56984458359&text=Hola! Necesito ayuda con mi PC 💻" target="_blank" class="social_hover">
+							<svg width="40px" height="40px" viewBox="-1.5 0 259 259" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#000000" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #000000;"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M67.6631045,221.823373 L71.8484512,223.916047 C89.2873956,234.379413 108.819013,239.262318 128.350631,239.262318 L128.350631,239.262318 C189.735716,239.262318 239.959876,189.038158 239.959876,127.653073 C239.959876,98.3556467 228.101393,69.7557778 207.17466,48.8290445 C186.247927,27.9023111 158.345616,16.0438289 128.350631,16.0438289 C66.9655467,16.0438289 16.7413867,66.2679889 17.4389445,128.350631 C17.4389445,149.277365 23.7169645,169.50654 34.1803311,186.945485 L36.9705622,191.130831 L25.8096378,232.28674 L67.6631045,221.823373 Z" fill="#00E676" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #00b85e;"> </path> <path d="M219.033142,37.66812 C195.316178,13.2535978 162.530962,0 129.048189,0 C57.8972956,0 0.697557778,57.8972956 1.39511556,128.350631 C1.39511556,150.67248 7.67313556,172.296771 18.1365022,191.828389 L0,258.096378 L67.6631045,240.657433 C86.4971645,251.1208 107.423898,256.003705 128.350631,256.003705 L128.350631,256.003705 C198.803967,256.003705 256.003705,198.106409 256.003705,127.653073 C256.003705,93.4727423 242.750107,61.3850845 219.033142,37.66812 Z M129.048189,234.379413 L129.048189,234.379413 C110.214129,234.379413 91.380069,229.496509 75.3362401,219.7307 L71.1508934,217.638027 L30.6925422,228.101393 L41.1559089,188.3406 L38.3656778,184.155253 C7.67313556,134.628651 22.3218489,69.05822 72.5460089,38.3656778 C122.770169,7.67313556 187.643042,22.3218489 218.335585,72.5460089 C249.028127,122.770169 234.379413,187.643042 184.155253,218.335585 C168.111425,228.798951 148.579807,234.379413 129.048189,234.379413 Z M190.433273,156.9505 L182.760138,153.462711 C182.760138,153.462711 171.599213,148.579807 164.623636,145.092018 C163.926078,145.092018 163.22852,144.39446 162.530962,144.39446 C160.438289,144.39446 159.043173,145.092018 157.648058,145.789576 L157.648058,145.789576 C157.648058,145.789576 156.9505,146.487133 147.184691,157.648058 C146.487133,159.043173 145.092018,159.740731 143.696902,159.740731 L142.999345,159.740731 C142.301787,159.740731 140.906671,159.043173 140.209113,158.345616 L136.721325,156.9505 L136.721325,156.9505 C129.048189,153.462711 122.072611,149.277365 116.492149,143.696902 C115.097033,142.301787 113.00436,140.906671 111.609245,139.511556 C106.72634,134.628651 101.843436,129.048189 98.3556467,122.770169 L97.658089,121.375053 C96.9605312,120.677496 96.9605312,119.979938 96.2629734,118.584822 C96.2629734,117.189707 96.2629734,115.794591 96.9605312,115.097033 C96.9605312,115.097033 99.7507623,111.609245 101.843436,109.516571 C103.238551,108.121456 103.936109,106.028782 105.331225,104.633667 C106.72634,102.540993 107.423898,99.7507623 106.72634,97.658089 C106.028782,94.1703001 97.658089,75.3362401 95.5654156,71.1508934 C94.1703001,69.05822 92.7751845,68.3606623 90.6825112,67.6631045 L88.5898378,67.6631045 C87.1947223,67.6631045 85.1020489,67.6631045 83.0093756,67.6631045 C81.6142601,67.6631045 80.2191445,68.3606623 78.8240289,68.3606623 L78.1264712,69.05822 C76.7313556,69.7557778 75.3362401,71.1508934 73.9411245,71.8484512 C72.5460089,73.2435667 71.8484512,74.6386823 70.4533356,76.0337978 C65.5704312,82.3118178 62.7802,89.9849534 62.7802,97.658089 L62.7802,97.658089 C62.7802,103.238551 64.1753156,108.819013 66.2679889,113.701918 L66.9655467,115.794591 C73.2435667,129.048189 81.6142601,140.906671 92.7751845,151.370038 L95.5654156,154.160269 C97.658089,156.252942 99.7507623,157.648058 101.145878,159.740731 C115.794591,172.296771 132.535978,181.365022 151.370038,186.247927 C153.462711,186.945485 156.252942,186.945485 158.345616,187.643042 L158.345616,187.643042 C160.438289,187.643042 163.22852,187.643042 165.321193,187.643042 C168.808982,187.643042 172.994329,186.247927 175.78456,184.852811 C177.877233,183.457696 179.272349,183.457696 180.667465,182.06258 L182.06258,180.667465 C183.457696,179.272349 184.852811,178.574791 186.247927,177.179676 C187.643042,175.78456 189.038158,174.389445 189.735716,172.994329 C191.130831,170.204098 191.828389,166.716309 192.525947,163.22852 C192.525947,161.833405 192.525947,159.740731 192.525947,158.345616 C192.525947,158.345616 191.828389,157.648058 190.433273,156.9505 Z" fill="#FFFFFF" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #181a1b;"> </path> </g> </g></svg>
 						</a>
 					</li>
+
+					<h3>Descargar TeamViewer</h3>
+
+					<div class="download_teamviewer">
+						<button class="button" type="button" onclick="downloadTeamViewer()">
+							<span class="button__text">TeamViewer</span>
+							<span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="bdd05811-e15d-428c-bb53-8661459f9307" data-name="Layer 2" class="svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -401,7 +525,6 @@
 						No importa si eres un usuario avanzado o alguien que está comenzando en el mundo de la tecnología,
 						puedo ayudarte a entender y utilizar tu equipo de manera eficiente. 
 						Así que si estás buscando un servicio de computación profesional y confiable, 
-						
 					</p>
 
 					<p>
